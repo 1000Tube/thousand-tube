@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  Ano: number;
+
   Footer = [
     {
       Titulo: 'Links Rápidos',
@@ -35,6 +37,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.Ano = new Date().getFullYear();
   }
 
 }
