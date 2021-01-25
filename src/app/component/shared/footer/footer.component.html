@@ -1,0 +1,11 @@
+<div class="footer">
+  <div class="menu">
+    <img src="assets/images/logo.svg" alt="">
+    <div class="column" *ngFor="let item of Footer">
+      <span class="titulo">{{item.Titulo}}</span>
+      <span class="link" *ngFor="let subitem of item.Links">{{subitem.Titulo}}</span>
+    </div>
+  </div>
+  <div class="linha"></div>
+  <span class="copyright">Copyright ©  2020 - 1000Tube</span>
+</div>
