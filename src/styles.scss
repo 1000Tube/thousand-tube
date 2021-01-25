@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: Pop-Medium;
+  src: url(assets/fonts/Poppins-Medium.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: Pop-Light;
+  src: url(assets/fonts/Poppins-Light.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: Pop-SemiBold;
+  src: url(assets/fonts/Poppins-SemiBold.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: Pop-Regular;
+  src: url(/assets/fonts/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Pop-Bold;
+  src: url(/assets/fonts/Poppins-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Rubik-Regular;
+  src: url(/assets/fonts/Rubik-Regular.ttf) format("truetype");
+}
+
+button{
+  font-family: 'Rubik-Regular';
+  border-radius: 25px;
+  padding: 14px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  outline: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn-home-header{
+  width: 170px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-home-header:hover{
+  background-color: white;
+  color: #475677;
+}
+
+.btn-secundario{
+  background-color: white;
+  border: 1px solid #D9DCE3;
+  color: #475677;
+}
+
+.btn-secundario:hover{
+  background-color: #475677;
+  color: white;
+}

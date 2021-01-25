@@ -1,0 +1,52 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  height: 383px;
+  border: 1px solid #E9E9E9;
+  border-radius: 10px;
+  position: relative;
+  padding: 50px;
+}
+
+.comman{
+  position: absolute;
+  top: 12%;
+}
+
+.descricao{
+  font-family: 'Rubik-Regular';
+  font-size: 15px;
+  color: #7D8597;
+  line-height: 26px;
+  text-align: center;
+}
+
+.user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 34px;
+
+  img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+
+  .nome{
+    font-family: 'Pop-Medium';
+    font-size: 18px;
+    color: #293B5F;
+    margin-top: 14px;
+  }
+
+  .cargo{
+    font-family: 'Pop-Regular';
+    font-size: 13px;
+    color: #707D97;
+  }
+}

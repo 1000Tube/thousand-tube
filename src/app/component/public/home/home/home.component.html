@@ -1,0 +1,67 @@
+<div class="home">
+  <div class="header">
+    <img class="image" src="assets/images/home_background.jpg" alt="">
+    <div class="gradient"></div>
+    <div class="texto">
+      <span class="titulo">Aprenda Algo Novo</span>
+      <span class="sub-titulo">Todo dia, lugar e hora</span>
+      <p class="descricao">Aqui você irá encontrar os melhores cursos disponibilizados pelo nossos Instrutores.</p>
+      <button class="btn-home-header">7 dias de teste</button>
+    </div>
+  </div>
+  <div class="categorias">
+    <app-categoria *ngFor="let item of Categorias" [Icon]="item.Icon" [Titulo]="item.Titulo" [isVerMais]="item.isVerMais"></app-categoria>
+  </div>
+  <div class="painel">
+    <div class="painel-header">
+      <span class="titulo">Recomendações de <b>Cursos</b></span>
+      <button class="btn-secundario">Pesquisar Cursos</button>
+    </div>
+    <div class="painel-content">
+      <app-curso-card *ngFor="let item of Recomendados" [Titulo]="item.Titulo" [Image]="item.Image" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>
+    </div>
+  </div>
+  <div class="escolha">
+    <img class="imagem" src="assets/images/escolha_background.jpg" alt="">
+    <div class="informacao">
+      <span class="h1">Por que você deveria</span>
+      <div class="h2">
+        <span>Escolher-nos</span>
+        <div class="linha"></div>
+      </div>
+      <span class="h3">Existem diversas razões para sermos a sua primeira escolha para<br>os seus estudos:</span>
+      <div class="ponto" *ngFor="let item of Escolhas">
+        <img src="assets/icons/icon_check.svg" alt="">
+        <span>{{item.Texto}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="conquistas">
+    <span class="titulo">Nossas Conquistas</span>
+    <span class="descricao">Acompanhe as nossas principais conquistas ao longo do tempo <br> E faça parte da nossa plataforma</span>
+    <div class="informacao">
+      <div class="informacao-item" *ngFor="let item of Conquistas">
+        <span class="numero" [style.color]="item.Cor">{{item.Numero}}</span>
+        <span class="numero-descricao">{{item.Descricao}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="painel">
+    <div class="painel-header">
+      <span class="titulo"><b>Instrutores</b> com melhor avaliação</span>
+      <button class="btn-secundario">Pesquisar Cursos</button>
+    </div>
+    <div class="painel-content">
+
+    </div>
+  </div>
+  <div class="painel feedbacks">
+    <div class="painel-header">
+      <span class="titulo"><b>Feedback</b> de Alunos</span>
+      <button class="btn-secundario">Ver mais</button>
+    </div>
+    <div class="painel-content">
+      <app-feedback-card *ngFor="let item of FeedBacks" [Descricao]="item.Descricao" [User]="item.User"></app-feedback-card>
+    </div>
+  </div>
+</div>
