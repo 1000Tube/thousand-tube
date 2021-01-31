@@ -1,0 +1,12 @@
+<div class="form-login">
+    <span class="aceder">Aceda a sua conta</span>
+    <form class="form">
+        <input type="text" placeholder="Nome de usuario">
+        <div class="password-content">
+            <input type="{{passwordVisivel?'text':'password'}}" placeholder="Palavra-passe" class="textbox">
+            <img class="icon" [src]="'assets/icons/'+(passwordVisivel?'icon_esconder_password.svg':'icon_visualizar_password.svg')" alt="" (click)="VisualizarPassword()">
+        </div>
+        <button class="btn-primario">Aceder</button>
+    </form>
+    <span class="recuperar">Esqueceu a palavra-passe?</span>
+</div>

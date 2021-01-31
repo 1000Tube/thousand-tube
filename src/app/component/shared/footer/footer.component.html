@@ -3,7 +3,7 @@
     <img src="assets/images/logo.svg" alt="">
     <div class="column" *ngFor="let item of Footer">
       <span class="titulo">{{item.Titulo}}</span>
-      <span class="link" *ngFor="let subitem of item.Links">{{subitem.Titulo}}</span>
+      <span class="link router-link-active" *ngFor="let subitem of item.Links" [routerLink]="subitem.Link">{{subitem.Titulo}}</span>
     </div>
   </div>
   <div class="linha"></div>

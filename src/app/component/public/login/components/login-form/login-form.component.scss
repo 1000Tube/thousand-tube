@@ -1,0 +1,44 @@
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aceder{
+    font-family: 'Pop-Bold';
+    font-size: 18px;
+    color: #475677;
+    margin-bottom: 35px;
+}
+
+/*Inputs*/
+.password-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    width: 356px;
+    margin-top: 28px;
+    margin-bottom: 38px;
+}
+  
+.icon {
+    position: absolute;
+    right: 0;
+    color: #707070;
+    padding: 5px 10px 5px 10px;
+}
+
+.recuperar{
+    font-family: 'Pop-Medium';
+    font-size: 15px;
+    color: #475677;
+    margin-top: 30px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.recuperar:hover{
+    color: #FFBE58;
+}

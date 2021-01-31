@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
       Titulo: 'Links Rápidos',
       Links: [
         {Titulo: 'Conta Premium', Link: ''},
-        {Titulo: 'Cursos', Link: ''},
+        {Titulo: 'Cursos', Link: '/cursos'},
         {Titulo: 'Instrutores', Link: ''},
       ]
     },
