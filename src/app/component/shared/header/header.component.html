@@ -1,13 +1,13 @@
 <nav class="header">
   <div class="logo">
-    <img src="assets/images/logo.svg" alt="">
+    <img class="router-link-active" routerLink="/" src="assets/images/logo.svg" alt="">
   </div>
   <div class="menus">
     <ul>
-      <li *ngFor="let item of Menu"><a href="">{{item.Titulo}}</a></li>
+      <li *ngFor="let item of Menu"><a [routerLink]="item.Link">{{item.Titulo}}</a></li>
     </ul>
     <div class="user">
-      <img src="assets/icons/icon_user.svg" alt="">
+      <img class="router-link-active" routerLink="/login" src="assets/icons/icon_user.svg" alt="">
     </div>
   </div>
 </nav>
