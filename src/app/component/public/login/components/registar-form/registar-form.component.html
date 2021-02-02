@@ -1,18 +1,15 @@
-<div class="form-login">
-    <span class="aceder">Aceda a sua conta</span>
+<div class="form-registar">
+    <span class="aceder">Preencha os dado para se registar</span>
     <form class="form">
+        <input class="nome" type="text" placeholder="Digite o primeiro e ultimo nome">
         <input type="text" placeholder="Email">
         <div class="password-content">
             <input type="{{passwordVisivel?'text':'password'}}" placeholder="Palavra-passe" class="textbox">
             <img class="icon" [src]="'assets/icons/'+(passwordVisivel?'icon_esconder_password.svg':'icon_visualizar_password.svg')" alt="" (click)="VisualizarPassword()">
         </div>
-        <div class="recuperar">
-            <span class="" routerLink="/login/recuperar-senha">Esqueceu a palavra-passe?</span>
-        </div>
-        <button class="btn-primario">Aceder</button>
+        <button class="btn-primario">Registar</button>
     </form>
     <div class="registar">
-        <span>Ainda não tem uma conta?</span>
-        <span>Registar com <b>Instrutor</b> ou <b routerLink="/login/registar">Estudante</b></span>
+        <span>Já tem uma conta? <b routerLink="/login">Efetuar login</b></span>
     </div>
 </div>
