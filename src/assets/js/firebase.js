@@ -10,6 +10,32 @@ const firebaseConfig = {
   };
 
 
-function teste(){
-    console.log("Ola mundo");
+
+function login(email, pass) {
+    return firebase.auth().signInWithEmailAndPassword(email, pass);
 }
+
+// função para Registar Utilizador
+function registarEstudante($user) {
+    firebase.auth().createUserWithEmailAndPassword($user.email, $user.password).catch(error => {
+        var errorCode = error.code;
+    });
+    return firebase.auth().onAuthStateChanged(newUser => {
+        if (newUser) {
+            firebase.database().collection("Estudantes").doc(newUser.uid).update({
+                nome: nome
+            });
+        }
+    })
+}
+
+function conectado() {
+    return firebase.auth()
+}
+
+
+
+function recuperarSenha(email) {
+    return firebase.auth().sendPasswordResetEmail(email)
+}
+

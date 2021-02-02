@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+//declare function recuperarSenha(email: string): any;
+
 @Component({
   selector: 'app-recuperar-senha-form',
   templateUrl: './recuperar-senha-form.component.html',
@@ -11,5 +13,15 @@ export class RecuperarSenhaFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/*
+Recuperar senha
+  async recuperarPassword(email: string) {
+    return await recuperarSenha(email)
+    .then(() => {
+      return true
+    })
+    .catch(()=> {
+      return false
+    })
+  }*/
 }
