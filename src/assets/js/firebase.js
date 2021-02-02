@@ -8,7 +8,8 @@ const firebaseConfig = {
     appId: "1:332144580372:web:b878e0c8c791addf97d401",
     measurementId: "G-Q2FCRV5FHK"
   };
-
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
 
 function login(email, pass) {
@@ -39,3 +40,7 @@ function recuperarSenha(email) {
     return firebase.auth().sendPasswordResetEmail(email)
 }
 
+async function cursos(){
+        return await firebase.firestore().collection("Cursos").get()
+    
+}
