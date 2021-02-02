@@ -1,0 +1,21 @@
+.arquivo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+img{
+    margin-right: 27px;
+}
+
+.titulo{
+    font-family: 'Pop-Regular';
+    font-size: 18px;
+    color: #475677;
+    transition-duration: 0.4s;
+}
+
+.arquivo:hover > .titulo{
+    color: #FFBE58;
+}

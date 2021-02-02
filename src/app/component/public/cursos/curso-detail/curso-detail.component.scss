@@ -1,0 +1,146 @@
+.curso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curso .header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 548px;
+    margin-bottom: 80px;
+}
+
+.curso .header .fundo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    object-fit: cover;
+}
+
+.curso .header .gradient{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgb(0,21,80);
+    background: linear-gradient(90deg, rgba(0,21,80,1) -10%, rgba(0,21,80,0.65) 44%, rgba(0,21,80,0.45) 100%);
+}
+
+.curso .header .painel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+
+.curso .header .painel .informacao{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    .titulo{
+        font-family: 'Pop-Bold';
+        font-size: 40px;
+        color: white;
+    }
+
+    .resumo{
+        font-family: 'Rubik-Regular';
+        font-size: 20px;
+        color: #E4E9FF;
+        margin-top: 20px;
+    }
+
+    .instrutor{
+        font-family: 'Rubik-Regular';
+        font-size: 20px;
+        color: #B1BCD8;
+        margin-top: 22px;
+
+        b{
+            color: #FFBE58;
+            cursor: pointer;
+        }
+    }
+
+    .aderencia{
+        display: flex;
+        font-family: 'Rubik-Regular';
+        font-size: 20px;
+        color: #E4E9FF;
+        margin-top: 22px;
+
+        .views{
+            margin-left: 51px;
+        }
+    }
+
+    .data{
+        display: flex;
+        align-items: center;
+        font-family: 'Rubik-Regular';
+        font-size: 20px;
+        color: #B1BCD8;
+        margin-top: 22px;
+
+        img{
+            margin-right: 15px;
+        }
+
+        span{
+            color: #E4E9FF;
+            margin-left: 15px;
+        }
+    }
+}
+
+.curso .content .panel{
+    width: 100%;
+    max-width: 1200px;
+}
+
+.curso .content .panel .panel-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .titulo{
+        font-family: 'Pop-Regular';
+        font-size: 28px;
+        color: #475677;
+    }
+}
+
+.curso .content .panel .panel-content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 33px;
+    margin-bottom: 72px;
+}
+
+.curso .content .panel .panel-content .descricao{
+    font-family: 'Rubik-Regular';
+    font-size: 18px;
+    color: #7D8597;
+    line-height: 35px;
+    text-align: justify;
+    margin: 0;
+}
+
+.curso .content .panel .accordions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 33px;
+    margin-bottom: 72px;
+    border: 1px solid #C6CBD5;
+    border-radius: 15px;
+    overflow: hidden;
+}
