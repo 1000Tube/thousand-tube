@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+//declare function cursos():any;
+
 @Component({
   selector: 'app-curso-list',
   templateUrl: './curso-list.component.html',
@@ -33,4 +35,16 @@ export class CursoListComponent implements OnInit {
     this.p = pageNumber;
   }
 
+ /* 
+ listar cursos
+ async listarCursos(){
+    await cursos().then((curso) => {
+      if(!curso.empty) {
+        curso.forEach(doc => {
+       //  doc.data().nome;
+         //doc.data().categoria; 
+        }); 
+      }
+    });
+  }*/
 }
