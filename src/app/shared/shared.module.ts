@@ -4,23 +4,28 @@ import { CursoCardComponent } from '../component/public/cursos/components/curso-
 import { FeedbackCardComponent } from '../component/public/feedback/components/feedback-card/feedback-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from '../component/public/common/pagination/pagination.component';
+import { AccordionComponent } from '../component/public/common/accordion/accordion.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     CursoCardComponent,
     FeedbackCardComponent,
-    PaginationComponent
+    PaginationComponent,
+    AccordionComponent
   ],
   imports: [
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule
   ],
   exports:[
     CursoCardComponent,
     FeedbackCardComponent,
     PaginationComponent,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AccordionComponent
   ]
 })
 export class SharedModule { }

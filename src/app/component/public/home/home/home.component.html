@@ -15,7 +15,7 @@
   <div class="painel">
     <div class="painel-header">
       <span class="titulo">Recomendações de <b>Cursos</b></span>
-      <button class="btn-secundario">Pesquisar Cursos</button>
+      <button class="btn-secundario" routerLink="/cursos">Pesquisar Cursos</button>
     </div>
     <div class="painel-content">
       <app-curso-card *ngFor="let item of Recomendados" [Titulo]="item.Titulo" [Image]="item.Image" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>

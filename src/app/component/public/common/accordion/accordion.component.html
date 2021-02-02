@@ -1,0 +1,9 @@
+<div class="accordion">
+    <div class="header" (click)="OpenOrClose()">
+        <img [class.active]="isOpen" src="assets/icons/icon_seta_baixo.svg" alt="">
+        <span class="titulo">{{Titulo}}</span>
+    </div>
+    <div class="content" [@toggleHeight]="isOpen ? 'show' : 'hide'">
+        <ng-content></ng-content>
+    </div>
+</div>

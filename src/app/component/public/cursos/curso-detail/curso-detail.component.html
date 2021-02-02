@@ -1,0 +1,58 @@
+<div class="curso" *ngIf="Curso">
+    <div class="header">
+        <img class="fundo" src="assets/images/cursos_header.jpg" alt="">
+        <div class="gradient"></div>
+        <div class="painel">
+            <div class="informacao">
+                <span class="titulo">{{Curso.Titulo}}</span>
+                <span class="resumo">{{Curso.Resumo}}</span>
+                <span class="instrutor">Instrutor: <b>{{Curso.Instruto}}</b></span>
+                <div class="aderencia">
+                    <div class="rate">
+                        <span class="rate-number">({{Curso.Rates}})</span>
+                    </div>
+                    <span class="views">{{Curso.Views}}</span>
+                </div>
+                <div class="data">
+                    <img src="assets/icons/icon_time.svg" alt="">
+                    Ultima actualização: 
+                    <span>{{Curso.Data}}</span>
+                </div>
+                <div class="tasks">
+
+                </div>
+            </div>
+            <div class="preco">
+                <app-curso-preco-card [Categoria]="Curso.Categoria" [Image]="Curso.Preview" [Tempo]="Curso.Tempo" [Preco]="Curso.Preco"></app-curso-preco-card>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="panel">
+            <div class="panel-header">
+                <span class="titulo">Descrição</span>
+            </div>
+            <div class="panel-content">
+                <p class="descricao">{{Curso.Descricao}}</p>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-header">
+                <span class="titulo">Conteúdo do Curso</span>
+            </div>
+            <div class="accordions">
+                <app-accordion *ngFor="let item of Curso.Aulas" [Titulo]="item.Modulo">
+                    <app-arquivo *ngFor="let subitem of item.Files" [Titulo]="subitem.Titulo" [Tipo]="subitem.Tipo" [Url]="subitem.Url"></app-arquivo>
+                </app-accordion>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-header">
+                <span class="titulo">Comentarios</span>
+            </div>
+            <div class="panel-content">
+                <app-feedback-card *ngFor="let item of FeedBacks" [Descricao]="item.Descricao" [User]="item.User"></app-feedback-card>
+            </div>
+        </div>
+    </div>
+</div>
