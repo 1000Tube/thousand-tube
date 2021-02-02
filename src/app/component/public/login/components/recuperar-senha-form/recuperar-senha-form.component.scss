@@ -1,0 +1,39 @@
+.form-recuperar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 356px;
+}
+
+.titulo{
+    font-family: 'Pop-Bold';
+    font-size: 18px;
+    color: #475677;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.form{
+    width: 100%;
+
+    .btn-primario{
+        margin-top: 44px;
+    }
+}
+
+.voltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pop-Medium';
+    font-size: 15px;
+    color: #475677;
+    margin-top: 44px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.voltar:hover{
+    color: #FFBE58;
+}
