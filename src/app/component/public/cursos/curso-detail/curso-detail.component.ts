@@ -83,11 +83,11 @@ export class CursoDetailComponent implements OnInit, OnDestroy {
   FeedBacks = [
     {
       Descricao: 'Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com a corrida.',
-      User: {Nome: 'Amanda Jackson', Cargo: 'CEO, NRD Group', Image: 'assets/images/alfredo.jpg'}
+      User: {Nome: 'Alfredo Vidinhas', Cargo: 'CEO, NRD Group', Image: 'assets/images/alfredo.jpg'}
     },
     {
       Descricao: 'Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com a corrida.',
-      User: {Nome: 'Amanda Jackson', Cargo: 'CEO, NRD Group', Image: 'assets/images/alfredo.jpg'}
+      User: {Nome: 'Atila Sousa', Cargo: 'CEO, NRD Group', Image: 'assets/images/alfredo.jpg'}
     }
   ];
 

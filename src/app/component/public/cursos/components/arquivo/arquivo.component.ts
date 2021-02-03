@@ -19,4 +19,13 @@ export class ArquivoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  downloadFile(){
+    let a = document.createElement('a');
+    a.href = this.Url;
+    a.target = "_blank";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
 }
