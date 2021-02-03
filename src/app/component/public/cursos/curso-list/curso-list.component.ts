@@ -66,6 +66,7 @@ export class CursoListComponent implements OnInit {
         }
         if(res == ''){
           this.isSearching = false;
+          this.Cursos = this.back;
         }
         else{
           this.Cursos = this.Cursos.filter(val => val.Titulo.toLowerCase().includes(res.toLowerCase()));
