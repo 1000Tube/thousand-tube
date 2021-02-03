@@ -6,6 +6,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from '../component/public/common/pagination/pagination.component';
 import { AccordionComponent } from '../component/public/common/accordion/accordion.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,14 +19,18 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     NgxPaginationModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     CursoCardComponent,
     FeedbackCardComponent,
     PaginationComponent,
     NgxPaginationModule,
-    AccordionComponent
+    AccordionComponent,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }

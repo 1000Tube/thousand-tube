@@ -1,15 +1,15 @@
 <div class="form-login">
     <span class="aceder">Aceda a sua conta</span>
     <form class="form">
-        <input type="text" placeholder="Email">
+        <input [formControl]="userEmail" type="text" placeholder="Email">
         <div class="password-content">
-            <input type="{{passwordVisivel?'text':'password'}}" placeholder="Palavra-passe" class="textbox">
+            <input [formControl]="userPassword" type="{{passwordVisivel?'text':'password'}}" placeholder="Palavra-passe" class="textbox">
             <img class="icon" [src]="'assets/icons/'+(passwordVisivel?'icon_esconder_password.svg':'icon_visualizar_password.svg')" alt="" (click)="VisualizarPassword()">
         </div>
         <div class="recuperar">
             <span class="" routerLink="/login/recuperar-senha">Esqueceu a palavra-passe?</span>
         </div>
-        <button class="btn-primario">Aceder</button>
+        <button class="btn-primario" [class.spinner]="isLoading" (click)="EfetuarLogin()">{{isLoading?'':'Aceder'}}</button>
     </form>
     <div class="registar">
         <span>Ainda não tem uma conta?</span>

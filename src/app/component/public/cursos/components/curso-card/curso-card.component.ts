@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-curso-card',
@@ -13,10 +14,16 @@ export class CursoCardComponent implements OnInit {
   @Input() Views: string;
   @Input() Rate: string;
   @Input() Image: string;
+  @Input() data: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  Click(){
+    const str = btoa(JSON.stringify(this.data));
+    this.router.navigate(['/cursos/', str]);
   }
 
 }

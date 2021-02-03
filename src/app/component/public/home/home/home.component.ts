@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
- declare function teste():any
+import { CursoService } from 'src/app/service/curso.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,18 +16,18 @@ export class HomeComponent implements OnInit {
     {Icon: 'assets/icons/icon_ver_mais.svg', Titulo: 'Ver mais', isVerMais: true}
   ];
 
-  Recomendados = [
+  Recomendados; /*= [
     {Image: 'assets/images/curso.png', Titulo: 'Como se tornar um ótimo gráfico Designer em 7 dias', Categoria: 'Design Gráfico', Tempo: '8h 17min', Views: '2,526,471', Rate: '15,250'},
     {Image: 'assets/images/curso.png', Titulo: 'Como se tornar um ótimo gráfico Designer em 7 dias', Categoria: 'Design Gráfico', Tempo: '8h 17min', Views: '2,526,471', Rate: '15,250'},
     {Image: 'assets/images/curso.png', Titulo: 'Como se tornar um ótimo gráfico Designer em 7 dias', Categoria: 'Design Gráfico', Tempo: '8h 17min', Views: '2,526,471', Rate: '15,250'}
-  ];
+  ];*/
 
   Escolhas = [
     {Texto: 'Variados Cursos'},
     {Texto: 'Instrutores Experientes'},
     {Texto: 'Acesso Ilimitado'},
     {Texto: 'Preços Confortaveis'},
-    {Texto: '1 mês Gratuito no Primeiro Pagamento'}
+    //{Texto: '1 mês Gratuito no Primeiro Pagamento'}
   ];
 
   Conquistas = [
@@ -40,18 +40,21 @@ export class HomeComponent implements OnInit {
   FeedBacks = [
     {
       Descricao: 'Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com a corrida.',
-      User: {Nome: 'Amanda Jackson', Cargo: 'CEO, NRD Group', Image: 'assets/images/alfredo.jpg'}
+      User: {Nome: 'Alfredo Vidinhas', Cargo: 'CEO, NERD Group', Image: 'assets/images/alfredo.jpg'}
     },
     {
       Descricao: 'Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com a corrida.',
-      User: {Nome: 'Amanda Jackson', Cargo: 'CEO, NRD Group', Image: 'assets/images/alfredo.jpg'}
+      User: {Nome: 'Atila e Sousa', Cargo: 'CEO, NCR Group', Image: 'assets/images/alfredo.jpg'}
     }
   ];
 
-  constructor() { }
+  constructor(private cursoService: CursoService) { }
 
-  ngOnInit(): void {
-    teste();
+  async ngOnInit(): Promise<void> {
+    const data = await this.cursoService.cursos();
+    data.subscribe((data) => {
+        this.Recomendados = data;
+    });
   }
 
 }

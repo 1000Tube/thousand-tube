@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { CursoService } from 'src/app/service/curso.service';
 
 @Component({
   selector: 'app-curso-detail',
   templateUrl: './curso-detail.component.html',
   styleUrls: ['./curso-detail.component.scss']
 })
-export class CursoDetailComponent implements OnInit {
+export class CursoDetailComponent implements OnInit, OnDestroy {
 
-  Curso = {
+  inscricao: Subscription;
+
+  Curso: any;
+
+  /*Curso = {
     Titulo: 'Como se tornar um ótimo gráfico Designer em 7 dias',
     Resumo: 'Aqui você irá encontrar os melhores cursos disponibilizados pelo nossos Instrutores.',
     Instruto: 'Alfredo Vidinhas',
@@ -71,7 +78,7 @@ export class CursoDetailComponent implements OnInit {
         ]
       }
     ]
-  }
+  }*/
 
   FeedBacks = [
     {
@@ -84,9 +91,19 @@ export class CursoDetailComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.inscricao = this.route.params.subscribe(
+      (params: any) => {
+        const data = params.slug;
+        this.Curso = JSON.parse(atob(data));
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
   }
 
 }

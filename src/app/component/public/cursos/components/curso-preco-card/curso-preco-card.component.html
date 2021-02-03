@@ -15,7 +15,7 @@
       </div>
       <span class="titulo">{{Preco}} KZ</span>
       <div class="content-footer">
-        <button class="btn-primario-amarelo">Comprar</button>
+        <button [class.btn-primario-amarelo]="!Pago" [class.btn-desativa]="Pago" [class.btn-primario]="Pago" (click)="Comprar()">{{Pago?'Comprado':'Comprar'}}</button>
       </div>
     </div>
 </div>  

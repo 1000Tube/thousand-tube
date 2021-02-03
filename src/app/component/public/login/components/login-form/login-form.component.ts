@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 //declare function registarEstudante(user: User):any;
 //declare function login(email:string, password: string): any;
@@ -11,10 +14,24 @@ import { Component, OnInit } from '@angular/core';
 export class LoginFormComponent implements OnInit {
 
   passwordVisivel = false;
+  userEmail = new FormControl('');
+  userPassword = new FormControl('');
+  isLoading = false;
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  async EfetuarLogin(){
+    this.isLoading = true;
+    const data = await this.authService.login(this.userEmail.value, this.userPassword.value).then(async () => { 
+      alert('Bem vindo ao ThousandTube');
+    }).catch(() => {  
+      alert('Error');
+    });
+    this.isLoading = false;
+    this.router.navigate(['/']);
   }
 
   VisualizarPassword(){

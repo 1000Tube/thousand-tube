@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CursoService } from 'src/app/service/curso.service';
 
 @Component({
   selector: 'app-curso-preco-card',
@@ -11,10 +12,17 @@ export class CursoPrecoCardComponent implements OnInit {
   @Input() Categoria: string;
   @Input() Tempo: string;
   @Input() Image: string;
+  @Input() Pago: boolean;
+  @Input() Ref: any;
 
-  constructor() { }
+  constructor(private cursoService: CursoService) { }
 
   ngOnInit(): void {
+  }
+
+  async Comprar(){
+    const data = await this.cursoService.comprar(this.Ref);
+    this.Pago = true;
   }
 
 }

@@ -6,19 +6,19 @@
       <span class="titulo">Aprenda Algo Novo</span>
       <span class="sub-titulo">Todo dia, lugar e hora</span>
       <p class="descricao">Aqui você irá encontrar os melhores cursos disponibilizados pelo nossos Instrutores.</p>
-      <button class="btn-home-header">7 dias de teste</button>
+      <button class="btn-home-header" routerLink="/cursos">Explorar</button>
     </div>
   </div>
-  <div class="categorias">
+  <div class="categorias" *ngIf="false">
     <app-categoria *ngFor="let item of Categorias" [Icon]="item.Icon" [Titulo]="item.Titulo" [isVerMais]="item.isVerMais"></app-categoria>
   </div>
-  <div class="painel">
+  <div class="painel recomendacoes">
     <div class="painel-header">
       <span class="titulo">Recomendações de <b>Cursos</b></span>
       <button class="btn-secundario" routerLink="/cursos">Pesquisar Cursos</button>
     </div>
     <div class="painel-content">
-      <app-curso-card *ngFor="let item of Recomendados" [Titulo]="item.Titulo" [Image]="item.Image" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>
+      <app-curso-card *ngFor="let item of Recomendados" [data]="item" [Titulo]="item.Titulo" [Image]="item.Preview" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>
     </div>
   </div>
   <div class="escolha">
@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-  <div class="painel">
+  <div class="painel" *ngIf="false">
     <div class="painel-header">
       <span class="titulo"><b>Instrutores</b> com melhor avaliação</span>
       <button class="btn-secundario">Pesquisar Cursos</button>
