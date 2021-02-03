@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   Menu = [
     {Titulo: 'Pagina Inicial', Link: '/'},
     {Titulo: 'Cursos', Link: '/cursos'},
-    {Titulo: 'Instrutores', Link: ''},
+    //{Titulo: 'Instrutores', Link: ''},
     {Titulo: 'Feedback', Link: ''}
   ]
 

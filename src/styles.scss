@@ -49,6 +49,7 @@ html {
 }
 
 button{
+  position: relative;
   font-family: 'Rubik-Regular';
   border-radius: 25px;
   padding: 14px 30px;
@@ -100,6 +101,12 @@ button{
   color: white;
 }
 
+.btn-desativa{
+  cursor: not-allowed;
+  opacity: 0.7;
+  pointer-events:none;
+}
+
 input[type=text],  input[type=password]{
   padding: 0 10px 0 10px;
   width: 100%;
@@ -117,4 +124,27 @@ input[type=text],  input[type=password]{
 
 input[type=text]:focus, input[type=password]:focus {
   border: 1px solid #475677;
+}
+
+
+//btn animation
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #004A78;
+  border-top-color: white;
+  animation: spinner .8s linear infinite;
 }

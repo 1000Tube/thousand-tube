@@ -6,7 +6,7 @@
             <span class="titulo">Encontre aqui os cursos a sua escolha</span>
             <span class="sub-titulo">Todo dia, lugar e hora</span>
             <div class="pesquisa-content">
-                <input type="text" placeholder="Pesquisar Cursos">
+                <input type="text" [formControl]="searchTerm" placeholder="Pesquisar Cursos">
                 <img class="icon" src="assets/icons/icon_search.svg" alt="">
             </div>
         </div>
@@ -15,7 +15,7 @@
         <span >Certa de <b>100</b> resultado para “Design”</span>
     </div>
     <div class="content">
-        <app-curso-card *ngFor="let item of Cursos | paginate: { itemsPerPage: 6, currentPage: p, totalItems: total}" [Titulo]="item.Titulo" [Image]="item.Image" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>
+        <app-curso-card *ngFor="let item of Cursos | paginate: { itemsPerPage: 6, currentPage: p, totalItems: total}" [data]="item" [Titulo]="item.Titulo" [Image]="item.Preview" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>
     </div>
     <app-pagination *ngIf="mostrarConteudo" (pageChange)="pageChange($event)"></app-pagination>
 </div>
