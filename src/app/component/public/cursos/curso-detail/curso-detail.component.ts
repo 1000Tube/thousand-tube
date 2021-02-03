@@ -103,10 +103,9 @@ export class CursoDetailComponent implements OnInit, OnDestroy {
         const data = params.slug;
         this.Curso = JSON.parse(atob(data));
         const date = new Date(this.Curso.Data);
-        date.setTime(this.Curso.Tempo);
-        const time = date.getHours() + 'h ' + date.getMinutes() + 'min';
-        this.Curso.Data = this.monthNames[date.getMonth()-1] + ' de ' + date.getFullYear();
-        this.Curso.Tempo = time;
+        const time = new Date(this.Curso.Tempo);
+        this.Curso.Data = this.monthNames[date.getMonth()] + ' de ' + date.getFullYear();
+        this.Curso.Tempo = time.getHours() + 'h ' + time.getMinutes() + 'min';;
       }
     );
   }

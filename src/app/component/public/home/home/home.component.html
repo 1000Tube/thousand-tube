@@ -18,7 +18,9 @@
       <button class="btn-secundario" routerLink="/cursos">Pesquisar Cursos</button>
     </div>
     <div class="painel-content">
-      <app-curso-card *ngFor="let item of Recomendados" [data]="item" [Titulo]="item.Titulo" [Image]="item.Preview" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>
+      <div *ngFor="let item of Recomendados let i  = index">
+        <app-curso-card *ngIf="i < 3" [data]="item" [Titulo]="item.Titulo" [Image]="item.Preview" [Categoria]="item.Categoria" [Tempo]="item.Tempo" [Views]="item.Views" [Rate]="item.Rate"></app-curso-card>
+      </div>
     </div>
   </div>
   <div class="escolha">
