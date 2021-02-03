@@ -10,7 +10,7 @@ export class CursoCardComponent implements OnInit {
 
   @Input() Titulo: string;
   @Input() Categoria: string;
-  @Input() Tempo: string;
+  @Input() Tempo: any;
   @Input() Views: string;
   @Input() Rate: string;
   @Input() Image: string;
@@ -19,6 +19,10 @@ export class CursoCardComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    const date = new Date();
+    date.setTime(this.Tempo);
+    const time = date.getHours() + 'h ' + date.getMinutes() + 'min';
+    this.Tempo = time;
   }
 
   Click(){
