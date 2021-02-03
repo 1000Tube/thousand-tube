@@ -91,6 +91,10 @@ export class CursoDetailComponent implements OnInit, OnDestroy {
     }
   ];
 
+  monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Octubro", "Novembro", "Dezembro"
+  ];
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -98,6 +102,11 @@ export class CursoDetailComponent implements OnInit, OnDestroy {
       (params: any) => {
         const data = params.slug;
         this.Curso = JSON.parse(atob(data));
+        const date = new Date(this.Curso.Data);
+        date.setTime(this.Curso.Tempo);
+        const time = date.getHours() + 'h ' + date.getMinutes() + 'min';
+        this.Curso.Data = this.monthNames[date.getMonth()-1] + ' de ' + date.getFullYear();
+        this.Curso.Tempo = time;
       }
     );
   }
