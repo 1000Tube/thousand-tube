@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 import { CursoService } from 'src/app/service/curso.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class CursoPrecoCardComponent implements OnInit {
   @Input() Pago: boolean;
   @Input() Ref: any;
 
-  constructor(private cursoService: CursoService) { }
+  constructor(private cursoService: CursoService, public authService: AuthService) { }
 
   ngOnInit(): void {
   }

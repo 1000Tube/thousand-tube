@@ -96,6 +96,14 @@ button{
   color: white;
 }
 
+.btn-primario-verde{
+  width: 100%;
+  padding: 12px 30px;
+  background-color: #00B592;
+  border: 1px solid white;
+  color: white;
+}
+
 .btn-secundario:hover{
   background-color: #475677;
   color: white;
@@ -147,4 +155,17 @@ input[type=text]:focus, input[type=password]:focus {
   border: 2px solid #004A78;
   border-top-color: white;
   animation: spinner .8s linear infinite;
+}
+
+// Repodutor de video Plyr
+.plyr{
+  width: 100%;
+  max-height: 538px !important;
+  font-family: 'Pop-Regular' !important;
+  position: relative !important;
+
+  .plyr__video-wrapper video{
+    //width: auto !important;
+    height: 100% !important;
+  }
 }

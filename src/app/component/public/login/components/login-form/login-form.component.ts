@@ -18,7 +18,7 @@ export class LoginFormComponent implements OnInit {
   userPassword = new FormControl('');
   isLoading = false;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,8 +34,12 @@ export class LoginFormComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  VisualizarPassword(){
+  async VisualizarPassword(){
     this.passwordVisivel = !this.passwordVisivel;
+  }
+
+  print(teste){
+    console.log('email: ',teste.email, teste)
   }
   /*
   Registar Estudante

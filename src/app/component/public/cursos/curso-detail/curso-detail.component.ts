@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CursoService } from 'src/app/service/curso.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-curso-detail',
@@ -95,19 +95,30 @@ export class CursoDetailComponent implements OnInit, OnDestroy {
     "Julho", "Agosto", "Setembro", "Octubro", "Novembro", "Dezembro"
   ];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         const data = params.slug;
         this.Curso = JSON.parse(atob(data));
+        console.log(this.Curso);
         const date = new Date(this.Curso.Data);
         const time = new Date(this.Curso.Tempo);
         this.Curso.Data = this.monthNames[date.getMonth()] + ' de ' + date.getFullYear();
         this.Curso.Tempo = time.getHours() + 'h ' + time.getMinutes() + 'min';;
       }
     );
+  }
+
+
+  /*
+  X - representa a pos no array de aulas
+  Y - representa o array dentro de cada aula
+  */
+  AssistirAula(x: number, y: number){
+    const str = btoa(JSON.stringify({x: x, y: y, curso: this.Curso}));
+    this.router.navigate(['/cursos/visualizar/', str]);
   }
 
   ngOnDestroy() {

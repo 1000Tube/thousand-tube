@@ -7,7 +7,8 @@
       <li *ngFor="let item of Menu"><a [routerLink]="item.Link">{{item.Titulo}}</a></li>
     </ul>
     <div class="user">
-      <img class="router-link-active" routerLink="/login" src="assets/icons/icon_user.svg" alt="">
+      <img *ngIf="!(authService.user | async)" class="router-link-active" routerLink="/login" src="assets/icons/icon_user.svg" alt="">
+      <span class="user-email" *ngIf="authService.user | async as user" (click)="Logout()">{{user.email}}</span>
     </div>
   </div>
 </nav>

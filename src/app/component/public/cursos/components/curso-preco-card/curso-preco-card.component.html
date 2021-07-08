@@ -15,7 +15,21 @@
       </div>
       <span class="titulo">{{Preco}} KZ</span>
       <div class="content-footer">
-        <button [class.btn-primario-amarelo]="!Pago" [class.btn-desativa]="Pago" [class.btn-primario]="Pago" (click)="Comprar()">{{Pago?'Comprado':'Comprar'}}</button>
+        <button *ngIf="authService.user | async" [class.btn-primario-amarelo]="!Pago" [class.btn-desativa]="Pago" [class.btn-primario]="Pago" (click)="Comprar()">{{Pago?'Comprado':'Comprar'}}</button>
+        
+        <div class="mais-informacoes">
+          <span class="mais-informacoes-titulo">Este curso inclui:</span>
+          <div class="mais-informacoes-item">
+            <img src="assets/icons/icon_chave.svg" alt="">
+            <span>Acesso total vitalício</span>
+          </div>
+          <div class="mais-informacoes-item">
+            <img src="assets/icons/icon_winner.svg" alt="">
+            <span>Certificado de conclusão</span>
+          </div>
+        </div>
+
+        <button *ngIf="authService.user | async" class="btn-primario-verde router-link-active" [class.btn-desativa]="!Pago" routerLink="/cursos/teste-certificacao">Efetuar teste</button>
       </div>
     </div>
 </div>  

@@ -7,21 +7,31 @@ import { PaginationComponent } from '../component/public/common/pagination/pagin
 import { AccordionComponent } from '../component/public/common/accordion/accordion.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RadioButtonComponent } from '../component/public/common/radio-button/radio-button.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
+// Note we need a separate function as it's required
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
     CursoCardComponent,
     FeedbackCardComponent,
     PaginationComponent,
-    AccordionComponent
+    AccordionComponent,
+    RadioButtonComponent
   ],
   imports: [
     CommonModule,
     NgxPaginationModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LottieModule.forRoot({ player: playerFactory })
   ],
   exports:[
     CursoCardComponent,
@@ -31,6 +41,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AccordionComponent,
     FormsModule,
     ReactiveFormsModule,
+    RadioButtonComponent,
+    LottieModule
   ]
 })
 export class SharedModule { }

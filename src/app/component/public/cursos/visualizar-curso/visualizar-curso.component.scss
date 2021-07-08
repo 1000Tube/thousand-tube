@@ -1,0 +1,35 @@
+
+
+.content{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.content .panel{
+    width: 100%;
+    max-width: 1200px;
+}
+
+.content .panel .panel-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .titulo{
+        font-family: 'Pop-Regular';
+        font-size: 28px;
+        color: #475677;
+    }
+}
+
+.content .panel .accordions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 33px;
+    margin-bottom: 72px;
+    border: 1px solid #C6CBD5;
+    border-radius: 15px;
+    overflow: hidden;
+}

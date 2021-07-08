@@ -1,0 +1,41 @@
+<div class="prova" *ngIf="!IsTesteTerminado">
+    <div #scroll class="header">
+        <img class="fundo" src="assets/images/cursos_header.jpg" alt="">
+        <div class="gradient"></div>
+        <div class="painel-texto">
+            <span class="titulo">{{Lista[QuestaoIndex].Pergunta}}</span>
+        </div>
+    </div>
+
+    <div class="time">
+        <span>Tempo Restante: 00:00:{{Segundos}}</span>
+    </div>
+
+    <div class="content">
+        <div class="questao" *ngFor="let item of Lista[QuestaoIndex].Respostas let i = index">
+            <app-radio-button [Titulo]="item.respostas" Name="questao" [Valor]="i" [formControl]='QuestaoSelecionada'></app-radio-button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="numero-questoes">
+            {{QuestaoIndex + 1}} de {{Lista.length}} questões
+        </div>
+        <div class="controls">
+            <button class="btn-primario" (click)="ProximaQuestao()">{{IsFinal() ? 'Terminar Teste' : 'Próxima Questão'}}</button>
+            <button class="btn-secundario router-link-active" routerLink="/cursos">Abandonar Teste</button>
+        </div>
+    </div>
+</div>
+
+<div class="estado" *ngIf="IsApto && IsTesteTerminado">
+    <ng-lottie width="240px" [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+    <h3>Parabens você passou no teste!</h3>
+    <span>Para baixar o seu certificado clica <span class="baixar" (click)="GerarPDF()">aqui</span>.</span>
+</div>
+
+<div class="estado" *ngIf="!IsApto && IsTesteTerminado">
+    <ng-lottie width="210px" [options]="options2" (animationCreated)="animationCreated($event)"></ng-lottie>
+    <h3>Infelizmente não foi dessa!</h3>
+    <span>Poderas tentar novamente daqui a 3 meses.</span>
+</div>

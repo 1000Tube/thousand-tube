@@ -1,0 +1,117 @@
+.prova{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prova .header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 548px;
+    margin-bottom: 50px;
+}
+
+.prova .header .fundo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    object-fit: cover;
+}
+
+.prova .header .gradient{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgb(0,21,80);
+    background: linear-gradient(90deg, rgba(0,21,80,1) -10%, rgba(0,21,80,0.65) 44%, rgba(0,21,80,0.45) 100%);
+}
+
+.prova .header .painel-texto{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 11;
+
+    .titulo{
+        font-family: 'Pop-Bold';
+        font-size: 42px;
+        color: white;
+    }
+}
+
+.prova .time{
+    font-family: 'Pop-Medium';
+    font-size: 16px;
+    color: #475677;
+    margin-bottom: 60px;
+}
+
+.prova .content{
+    display: flex;
+    flex-direction: column;
+
+    .questao{
+        margin-bottom: 40px;
+    }
+}
+
+.prova .footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+    align-items: center;
+    padding: 0px 52px;
+
+    .numero-questoes{
+        font-family: 'Pop-Medium';
+        font-size: 15px;
+        color: #475677;
+    }
+
+    .controls{
+        display: flex;
+        flex-direction: row-reverse;
+        width: 50%;
+
+        .btn-primario{
+            width: auto !important;
+            margin-left: 40px;
+        }
+
+    }
+}
+
+.estado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    border-top: 1px solid #C6CBD5;
+    border-bottom: 1px solid #C6CBD5;
+    color: #475677;
+
+    h3{
+        font-family: 'Pop-Bold';
+    }
+
+    span{
+        font-family: 'Pop-Regular';
+
+        &.baixar{
+            font-family: 'Pop-Bold';
+            cursor: pointer;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

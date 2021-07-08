@@ -8,9 +8,6 @@
                 <span class="resumo">{{Curso.Resumo}}</span>
                 <span class="instrutor">Instrutor: <b>{{Curso.Instruto}}</b></span>
                 <div class="aderencia">
-                    <div class="rate" *ngIf="false">
-                        <span class="rate-number">({{Curso.Rates}})</span>
-                    </div>
                     <span class="views">{{Curso.Views}} Views</span>
                 </div>
                 <div class="data">
@@ -41,8 +38,8 @@
                 <span class="titulo">Conteúdo do Curso</span>
             </div>
             <div class="accordions">
-                <app-accordion *ngFor="let item of Curso.Aulas" [Titulo]="item.Modulo">
-                    <app-arquivo *ngFor="let subitem of item.Files" [Titulo]="subitem.Titulo" [Tipo]="subitem.Tipo" [Url]="subitem.Url"></app-arquivo>
+                <app-accordion *ngFor="let item of Curso.Aulas let x = index" [Titulo]="item.Modulo">
+                    <app-arquivo *ngFor="let subitem of item.Files let y = index" [class.btn-desativa]="!(authService.user | async)" (click)="AssistirAula(x, y)" [Titulo]="subitem.Titulo" [Tipo]="subitem.Tipo" [Url]="subitem.Url"></app-arquivo>
                 </app-accordion>
             </div>
         </div>

@@ -1,6 +1,5 @@
 .card{
     width: 370px;
-    height: 433px;
     border: 1px solid #707070;
     border-radius: 15px;
     background-color: white;
@@ -81,6 +80,46 @@
   }
   
   .content-footer{
+    display: flex;
+    flex-direction: column;
     margin-top: 25px;
+
+    .mais-informacoes{
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      margin: 20px 0;
+      border-top: 1px solid #D9DCE3;
+      border-bottom: 1px solid #D9DCE3;
+
+      .mais-informacoes-titulo{
+        font-family: 'Pop-Medium';
+        font-size: 15px;
+        color: #475677;
+      }
+
+      .mais-informacoes-item{
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+
+        span{
+          font-family: 'Pop-Regular';
+          font-size: 14px;
+          color: #7D8597;
+          margin-left: 8px;
+        }
+
+        img{
+          width: 20px;
+          height: 20px;
+        }
+
+      }
+    }
+
+    .obter-certificado{
+
+    }
   }
   

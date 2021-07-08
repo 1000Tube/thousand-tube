@@ -1,0 +1,16 @@
+<div class="header">
+    <plyr [plyrSources]="sources" [plyrOptions]="options" [plyrPoster]="Curso.Preview" [plyrTitle]="Curso.Titulo"></plyr>
+</div>
+
+<div class="content">
+    <div class="panel">
+        <div class="panel-header">
+            <span class="titulo">Conteúdo do Curso</span>
+        </div>
+        <div class="accordions">
+            <app-accordion *ngFor="let item of Curso.Aulas" [Titulo]="item.Modulo">
+                <app-arquivo *ngFor="let subitem of item.Files" [Titulo]="subitem.Titulo" [Tipo]="subitem.Tipo" [Url]="subitem.Url"></app-arquivo>
+            </app-accordion>
+        </div>
+    </div>
+</div>

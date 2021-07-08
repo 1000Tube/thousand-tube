@@ -21,7 +21,12 @@
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
     "firebase": "^7.0 || ^8.0",
+    "jspdf": "^2.3.1",
+    "lottie-web": "^5.7.11",
+    "ngx-lottie": "^7.0.3",
     "ngx-pagination": "^5.0.0",
+    "ngx-plyr": "^4.0.0",
+    "plyr": "^3.6.8",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
